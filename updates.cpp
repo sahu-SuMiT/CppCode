@@ -122,3 +122,51 @@ int main() {
    
     return 0;    
 }
+#include <cmath>
+#include <iostream>
+using namespace std;
+class MathOperations{
+public:
+    double add(double x, double y){
+        return x+y;
+    }    
+    double subtract(double x, double y){
+        return x-y;
+    }
+    double multiply(double x, double y){
+        return x*y;
+    }
+    double divide(double x, double y){
+        if(x!=0){
+            return x/y;
+        }
+        cout<<"ERROR! can't divide by 0\n";
+        return -1;
+    }
+    class NestedOperations{
+    public:
+        int factorial(int x){
+            int result=1;
+            while(x!=0){
+                result*=x--;
+            }
+            return result;
+        }
+        double squareRoot(double x){
+            return sqrt(x);
+        }
+    };
+};
+int main() {
+    MathOperations obj1;
+    MathOperations::NestedOperations obj2;
+    
+    cout<<"obj1.add(2,3): "<<obj1.add(2,3)<<"\n";
+    cout<<"obj1.subtract(2,3): "<<obj1.subtract(2,3)<<"\n";
+    cout<<"obj1.multiply(2,3): "<<obj1.multiply(2,3)<<"\n";
+    cout<<"obj1.divide(2,3): "<<obj1.divide(2,3)<<"\n";
+    cout<<"obj2.factorial(5): "<<obj2.factorial(5)<<"\n";
+    cout<<"obj1.squareRoot(3): "<<obj2.squareRoot(3)<<"\n";
+    
+    return 0;
+}
