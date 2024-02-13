@@ -170,3 +170,40 @@ int main() {
     
     return 0;
 }
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class BankAccount{
+private: 
+    unsigned long long account_number;
+    string name;
+    double balance;
+    
+public:
+    int create_account(){
+        static int track=0;track++;
+        cout<<"Enter account number: ";cin>>account_number;
+        cout<<"Enter account holder name: ";cin.ignore();getline(cin,name);
+        cout<<"Enter account balance: ";cin>>balance;
+        return track;
+    }
+    void account_details(){
+        cout<<"Account_Number: "<<account_number<<", Name: "<<name<<", Balance: "<<balance<<"\n";
+    }
+    
+};
+
+int main() {
+    BankAccount b1,b2,b3,b4;int count_accounts=0;
+    count_accounts=b1.create_account();cout<<"\n";
+    count_accounts=b2.create_account();cout<<"\n";
+    
+    b1.account_details();
+    b2.account_details();
+    cout<<"\naccounts_till: "<<count_accounts<<"\n";
+
+    return 0;
+}
