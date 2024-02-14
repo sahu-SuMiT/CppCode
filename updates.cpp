@@ -207,3 +207,53 @@ int main() {
 
     return 0;
 }
+
+.............................................................
+#include <iostream>
+using namespace std;
+class M{
+    int x; int y;
+public:
+    void set_xy(int a, int b){
+        x=a; y=b;
+    }
+    friend int sum(M m);
+};
+
+int sum(M m){
+    int M::*px=&M::x;
+    int M::*py=&M::y;
+    M *pm=&m;
+    //int S = m.x+m.y;
+    //int S = m.*px+m.*py;
+    //int S=pm->x+pm->y;
+    int S=pm->*px+pm->*py;
+    return S;
+}
+/*int sum(M m){
+    int M::*px=&M::x;
+    int M:::*py=&M::y;
+    M *pm=&m;
+    int S=pm->*px+pm->*py;
+  
+}*/
+
+
+int main() {
+    M m;
+    int x=10;int y=31;int sum_xy;
+    void(M::*pf)(int, int)=&M::set_xy;
+    (m.*pf)(3,4);
+    cout<<"SUM="<<sum(m)<<"\n";
+    M *op=&m;
+    (op->*pf)(30,40);
+    cout<<"SUM="<<sum(m)<<"\n";
+    
+  /*  
+    m.set_xy(x,y);
+    sum_xy=sum(m);
+    cout<<"sum_xy: "<<sum_xy<<"\n";*/
+
+    return 0;
+}
+.............................................................
