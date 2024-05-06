@@ -34,6 +34,7 @@ RANDOM
 srand(time(NULL));
 int a = rand()%6+1;
 
+std::fill(container_name,container_name+size,value);
 
 
 
