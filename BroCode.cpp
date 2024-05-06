@@ -18,8 +18,22 @@ text_t firstName = "Bro";
 text_t secondName = "Code";
 number_t a_variable = 10;
 
+STRINGS
 std::getline(std::cin            , name    ); 
 std::getline(std::cin >> std::ws , name    ); std::ws ignores initial initial whitespaces, tabs and newline character
 std::getline(std::cin >> std::ws , name,'!'); 
+name.empty();
+name.length();
+name.at(index_of_the_string); //pass index
+name.append(string_inside);
+name.insert(string_inside);
+name.erase(start_index, length_of_the_part); 
+name.find('a'); 
+
+RANDOM
+srand(time(NULL));
+int a = rand()%6+1;
+
+
 
 
