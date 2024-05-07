@@ -42,4 +42,8 @@ auto max(T x, U y){
   return (x>y)?x:y;
 }
 
+ENUMS
+paired named-integer constants
+enum Day {sunday = 0, monday = 1, tuesday = 2, wednesday = 3, thursday = 4, friday = 5, saturday = 6};
+enum Flavor {vanilla, chocolate, strawberry,mint};(default integer assignment as 0,1,2,3...)
 
