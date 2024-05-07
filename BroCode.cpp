@@ -46,4 +46,7 @@ ENUMS
 paired named-integer constants
 enum Day {sunday = 0, monday = 1, tuesday = 2, wednesday = 3, thursday = 4, friday = 5, saturday = 6};
 enum Flavor {vanilla, chocolate, strawberry,mint};(default integer assignment as 0,1,2,3...)
+enum Planet {mercury = 4880, venus = 12104, earth = 12756, 
+             mars = 6794, jupiter = 142984, saturn = 108728, 
+             uranus = 51118, neptune = 49532, pluto = 2320};
 
