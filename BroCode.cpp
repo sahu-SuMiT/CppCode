@@ -36,5 +36,10 @@ int a = rand()%6+1;
 
 std::fill(container_name,container_name+size,value);
 
+TEMPLATES
+template <typename T, typename U>
+auto max(T x, U y){
+  return (x>y)?x:y;
+}
 
 
