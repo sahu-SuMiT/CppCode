@@ -30,3 +30,35 @@ PRIORIY_QUEUE
     pq.top();//10
     pq.pop();//{2,5,8}
     priority_queue<int, vector<int>, greater<int>>pq;
+SET
+    set<int>st;
+    auto it = st.find(3);
+    auto it = st.find(6);
+    st.erase(5);
+    st.erase(it1, it2);
+    int cnt = st.count(1);
+MULTISET
+    multiset<int>ms;
+    ms.insert(1);{1}
+    ms.insert(1);{1, 1}
+    ms.insert(1);{1, 1, 1}
+    ms.erase(1) //erase all 1 =>{}
+    int cnt = ms.count(1)//count how many 1's
+    ms.erase(ms.find(1));
+    ms.erase(ms.find(1),ms.find(1)+2) // erase(starting_address, end);
+UNORDEREDSET
+    unorderedset<int>st;//all operations O(1) in worstcase sometimes O(n)
+MAP
+    map<int,int>mpp; // {key,value}
+    map<int,pair<int,int>>mpp;
+    map<pair<int,int>,int>mpp;
+    mpp[1] = 2;
+    mpp.emplace({3,1});
+    mpp.insert({2,4});//map stores unique keys in sorted order similar to set datastructure
+    for(auto it : mpp){cout << it.first << " " << it.second << endl;}
+    map[KEY] //returns value for that key
+MULTIMAP
+    multimap<int,int>mmp; //can store multiple keys in ordered manner
+UNORDEREDMAP
+    unorderedmap<int, int>ump; //stores keys in randomised order
+
