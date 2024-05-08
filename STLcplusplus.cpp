@@ -61,4 +61,25 @@ MULTIMAP
     multimap<int,int>mmp; //can store multiple keys in ordered manner
 UNORDEREDMAP
     unorderedmap<int, int>ump; //stores keys in randomised order
+ALGORITHMS
+    sort(start_included, end_excluded);
+    sort(v.begin(),v.end());
+    sort(start_included, end_excluded, greater<int>);
+    sort(start, end, comp);//means sort according to second element in increasing order, if they are same sort according to first element in decending.
+    bool comp(pair<int,int>p1,pair<int,int>p2){
+        if(p1.second < p2.second) return true;
+        if(p1.second > p2.second) return false;
+        if(p1.first > p2.first) return true;
+        return false;
+    }
+    int num = 7;
+    int cnt = __builtin_popcount(num);
+    long long num = 165786578687;
+    int cnt = __builtin_popcountll(num);
+    std::string s = "123"; //#include <algorithm>
+        do{
+            std::cout << s << '\n';
+        }while(std::next_permutation(s.begin(),s.end()));
+    int maxi = *max_element(a,a+n);
+    int mini = *min_element(a,a+n);
 
