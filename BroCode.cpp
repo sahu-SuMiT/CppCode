@@ -41,6 +41,34 @@ template <typename T, typename U>
 auto max(T x, U y){
   return (x>y)?x:y;
 }
+template<class T>
+class className{
+    private:
+        T var;
+    public:
+    void setdat(T var);
+    void print();
+    void check();
+};
+template<class T>
+void className<T>::check(){
+    (var) ?  std::cout << "var has successfully been assigned a value\n" : std::cout << "Var is still null\n";
+}
+template<class T>
+void className<T>::print(){
+        std::cout << "printing the class template\n" << "var : " << var << std::endl;
+}
+template <class T>
+void className<T>::setdat(T var){
+        this->var = var;
+}
+int main(){
+  className<double> obj;
+    obj.check();
+    obj.setdat(3.2832);
+    obj.check();
+    obj.print();
+}
 
 ENUMS
 paired named-integer constants
