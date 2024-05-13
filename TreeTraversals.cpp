@@ -30,7 +30,7 @@ public:
             std::cout << temp->val << " ";
             temp = temp->right;}
         return ans;}};
-    vector<int>preorder(TreeNode* root){
+    vector<int>postOrder(TreeNode* root){
         if(root == nullptr){
             return {};
         }
