@@ -1,0 +1,43 @@
+vector<int> sieve(int n) {
+        vector<int> primes = {};
+        bool isPrime[n + 1];
+        for(int i = 0; i < n + 1; i++){
+            isPrime[i] = true;
+        }
+        for(int i = 2; i* i <= n; i++){
+            if(isPrime[i] == true){
+                for(int j = 2 * i; j <= n; j = i + j){
+                    isPrime[j] = false;
+                }
+            }
+        }
+        for(int i = 2; i <= n; i++){
+            if(isPrime[i] == true){
+                //std::cout << i <<" ";
+                primes.push_back(i);
+            }
+        }
+        return primes;
+    
+}
+
+vector<int> findPrimeFactors(int N) {
+    vector<int> primes = {};
+    vector<int> ans = {};
+    primes =  sieve(N);
+    int i = 0; //i < primes.end() not required
+    while(N > 1){
+        /*i++; i++; N/=primes[i]; N/=primes[i];N/=primes[i];
+        std::cout << "\n" <<primes[i] << " " << N << "   " << (N)%primes[i] <<" ";*/
+         if(N % primes[i] == 0){
+            ans.push_back(primes[i]);
+            //std:cout << primes[i] << " ";;
+            N/=primes[i];
+         }
+         else{
+            i++;
+         }
+   }
+    return ans;
+            // Write your code here
+}
