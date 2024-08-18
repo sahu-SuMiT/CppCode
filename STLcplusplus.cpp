@@ -111,41 +111,61 @@ MULTISET
     ms.erase(1) //erase all 1 =>{}
     int cnt = ms.count(1)//count how many 1's
     ms.erase(ms.find(1));
-    ms.erase(ms.find(1),ms.find(1)+2) // erase(starting_address, end);
+    ms.erase(ms.find(1),ms.find(1)+2) // erase(starting_address, end); //this givs error
 UNORDEREDSET
-    unorderedset<int>st;//all operations O(1) in worstcase sometimes O(n)
+    unorderedset<int>st;//all operations O(1) in worstcase blue_moon O(n)
+    
 MAP
     map<int,int>mpp; // {key,value}
     map<int,pair<int,int>>mpp;
-    map<pair<int,int>,int>mpp;
+    map<pair<int,int>,int> mpp;
+
+    map[KEY] = value  //one way to insert elements
+    mpp[{1,2}] = 3;
+    mpp[{1,1}] = 2;
+    mpp[{2,1}] = 3;
+    mpp[{1,3}] = 4;   //will be stored in lexiographically order
+    auto it = mpp.find({3,3});
+    std::cout << "\n" << it->first.first << " " << it->first.second <<" " <<it->second << "\n"; // perhaps for some reason *(it).first does not work
+    
     mpp[1] = 2;
     mpp.emplace({3,1});
     mpp.insert({2,4});//map stores unique keys in sorted order similar to set datastructure
+    //mpp.insert({KEY, value});
+        
     for(auto it : mpp){cout << it.first << " " << it.second << endl;}
     map[KEY] //returns value for that key
+    
+
 MULTIMAP
-    multimap<int,int>mmp; //can store multiple keys in ordered manner
+    multimap<int,int>mmp; //can store multiple similar keys in ordered manner
+
 UNORDEREDMAP
     unorderedmap<int, int>ump; //stores keys in randomised order
 ALGORITHMS
-    sort(start_included, end_excluded);
+    sort(a, a+n);
     sort(v.begin(),v.end());
-    sort(start_included, end_excluded, greater<int>);
+    sort(start, end + 1) //ascending
+    sort(start, end + 1, greater<int>);
     sort(start, end, comp);//means sort according to second element in increasing order, if they are same sort according to first element in decending.
     bool comp(pair<int,int>p1,pair<int,int>p2){
         if(p1.second < p2.second) return true;
         if(p1.second > p2.second) return false;
+        //p1.second == p2.second
         if(p1.first > p2.first) return true;
         return false;
     }
+
     int num = 7;
-    int cnt = __builtin_popcount(num);
+    int cnt = __builtin_popcount(num); // how many set bits are there (3, 111);
     long long num = 165786578687;
     int cnt = __builtin_popcountll(num);
-    std::string s = "123"; //#include <algorithm>
-        do{
-            std::cout << s << '\n';
-        }while(std::next_permutation(s.begin(),s.end()));
-    int maxi = *max_element(a,a+n);
+    std::string s = "123"; //
+    #include <algorithm>
+    do{
+       std::cout << s << '\n';
+    }while(std::next_permutation(s.begin(),s.end()));
+    //while the string has been arranged in ascending lexio order, there is false return
+    int maxi = *max_element(a,a+n); // a is the start iterator
     int mini = *min_element(a,a+n);
 
