@@ -1,4 +1,4 @@
-ITERATORS / Operations on VECTORS
+ITERATORS / Operations on VECTORS (singly Linked list)
 vector<int>::iterator it = v.begin();
 for(vector<int>::iterator it = v.begin(); it != v.end(); it++){
     cout << *(it) <<" ";
@@ -27,13 +27,36 @@ v.pop_back();
 v.swap(v2);
 v.clear() //cleans down to empty vector
 v.empty() // true or false
+
+LIST(doubly_linked_list)
+list<int> ls;
+ls.push_back();
+ls.emplace_back();
+
+ls.push_front();  // vector does not have this
+ls.emplace_front(); //vector does not have this
+// 'class std::vector<int>' has no member named 'emplace_front'
+// 'class std::vector<int>' has no member named 'push_front'
+//rest functions are same as vectors begin, end, rbegin, rend, clear, insert, size, swap
+
+DEQUE
+deque<int> dq;
+dq.push_back(10);
+dq.emplace_back(20);
+dq.push_front(5);
+dq.emplace_front(1);
+
+dq.pop_front(); //returns void
+dq.pop_back(); // returns void
+
+dq.front(); 
+dq.back();
+//rest functions are same as vectors begin, end, rbegin, rend, clear, insert, size, swap
 PAIR
-VECTOR
-LIST
+
 STACK
     stack<int> st;
     st.push(1); //{1}
-    st.push(2); //{2,1}
     st.emplace(3); //{3,2,1}
     st.pop(); //{2,1};
     st.top(); //2
@@ -50,7 +73,9 @@ QUEUE
     cout << q.front();
     q.pop();
     cout << q.front();
-PRIORIY_QUEUE
+    //size and swap same
+PRIORIY_QUEUE // Min Heap / Max Heap
+    //generally push, pop, size, top
     priority_queue<int>pq;
     pq.push(5);//{5}
     pq.push(2);//{2,5}
@@ -58,14 +83,26 @@ PRIORIY_QUEUE
     pq.emplace(10);//{2,5,8,10}
     pq.top();//10
     pq.pop();//{2,5,8}
+    //syntax for minimum priority queue
     priority_queue<int, vector<int>, greater<int>>pq;
-SET
-    set<int>st;
-    auto it = st.find(3);
+SET // ordered and unique( and all operations take log N time)
+    set<int>st;    
+    st.insert(1);
+    st.emplace(2);
+    st.insert(2);
+    st.insert(3);
+    auto it = st.find(3); // returns an iterator pointing at 3 & if this element not there, returns v.end()
     auto it = st.find(6);
     st.erase(5);
-    st.erase(it1, it2);
+    auto it1 = st.find(2);
+    auto it2 = st.find(4);
+    st.erase(it1, it2); // does not erase element at it2
     int cnt = st.count(1);
+
+    lower_bound() and upper_bound() works the same way in vector
+    auto it = st.lower_bound();
+    auto it = st.upper_bound();
+    //In summary, while lower_bound and upper_bound are useful functions for other containers, they are not necessary for std::set due to its inherent properties.
 MULTISET
     multiset<int>ms;
     ms.insert(1);{1}
