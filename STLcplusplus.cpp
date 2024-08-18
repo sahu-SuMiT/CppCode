@@ -1,3 +1,32 @@
+ITERATORS / Operations on VECTORS
+vector<int>::iterator it = v.begin();
+for(vector<int>::iterator it = v.begin(); it != v.end(); it++){
+    cout << *(it) <<" ";
+}
+for(auto it = v.begin(); it != v.end(); it++){
+    cout << *(it) <<" ";
+}
+for(auto it : v){
+    cout << it << " ";
+}
+v.begin() points at the first element
+v.end() does not point to the last element, but one later the last element
+v.rbegin() points to the last element
+v.rend() does not point to the first element, but one ahead of  first element
+
+v.erase(v.begin() + 1) // second element erased & size reduced to 1
+v.erase(v.begin() + 1, v.begin() + 3) // second, third and fourth element erased & size reduced
+
+v.insert(v.begin() + 1, 180) // inserted at position 1 value 180
+v.insert(v.begin() + 1, 2, 180) // insert at position 1, 2 values, 180 
+vector<int> copy(2,50);
+v.insert(v.begin(), copy.begin(), copy.end()); //{50,50,rest};
+
+v.size();
+v.pop_back();
+v.swap(v2);
+v.clear() //cleans down to empty vector
+v.empty() // true or false
 PAIR
 VECTOR
 LIST
