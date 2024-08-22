@@ -29,3 +29,28 @@ bool isSorted(int array[], int n, int index){
     }
     return array[index] < array[index + 1] && isSorted(array, n, index + 1);
 }
+LIST OF REPEATING INDICES (java)
+static ArrayList<Integer> list = new ArrayList<>();
+	public static void main(String[] args) {
+		int array[] = {1,2,3,4,5,6,7,5,8,5,10};
+		list = f(array, 5, 0);
+		for(int element : list){
+		    System.out.println(element + " ");
+		}
+		
+	}
+or
+static ArrayList<Integer> f(int array[], int target, int index){
+        ArrayList<Integer> list = new ArrayList<>();
+        if(index == array.length){
+            return list;
+        }
+        else if(array[index] == target){
+            list.add(index);
+        }
+        
+        ArrayList<Integer> ansFromBelowCalls = f(array, target, index + 1);
+        
+        list.addAll(ansFromBelowCalls);
+        return list;
+    }
