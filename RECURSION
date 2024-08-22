@@ -54,3 +54,30 @@ static ArrayList<Integer> f(int array[], int target, int index){
         list.addAll(ansFromBelowCalls);
         return list;
     }
+PATTERNS (java)
+static void pattern(int rows, int cols){
+        if(rows == 0){
+            return;
+        }
+        else if(rows > cols){
+            System.out.print(" * ");
+            pattern(rows, cols + 1);
+        }
+        else{
+            System.out.println();
+            pattern(rows - 1, 0);
+        }
+    }
+    static void triangle2(int rows, int cols){
+        if(rows == 0){
+            return;
+        }
+        else if(cols < rows){
+            triangle2(rows, cols + 1);
+            System.out.print("*");
+        }
+        else{
+            triangle2(rows - 1, 0);
+            System.out.println();
+        }
+    }
