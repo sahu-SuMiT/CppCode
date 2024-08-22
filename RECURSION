@@ -15,3 +15,17 @@ int counter_helper(int n, int c){
         return counter_helper(n/10,c);
     }
 }
+SEARCH IN ARRAY
+bool search(int array[], int n, int target, int index){
+    if(index == n){
+        return false;
+    }
+    return (array[index] == target || search(array, n, target, index + 1));
+}
+ISSORTED
+bool isSorted(int array[], int n, int index){
+    if(index == n - 1){
+        return true;
+    }
+    return array[index] < array[index + 1] && isSorted(array, n, index + 1);
+}
