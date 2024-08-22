@@ -1,0 +1,17 @@
+PALINDROME TEST
+bool isPalindrome(string name, int start, int end){
+    if(start < end){
+        return (name[start] == name[end]) && (isPalindrome(name, start+1, end -1));
+    }
+    return true;
+}
+
+COUNT ZEROS
+int counter_helper(int n, int c){
+    if(n){
+        if(n%10 == 0){
+            return counter_helper(n/10, c+1);
+        }
+        return counter_helper(n/10,c);
+    }
+}
