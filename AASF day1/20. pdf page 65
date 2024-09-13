@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+ 
+int main() {
+    int numbers[] = {10,20,30,40,50};
+    int* ptr = numbers;
+    
+    cout << "First element using array notation: " << numbers[0] << endl;
+    cout << "First element using pointer: " << *ptr << std::endl;
+    
+    cout << "Third element using array notation: " << numbers[2] << endl;
+    cout << "Third element using pointer arithmetic: " << *(ptr + 2)<< endl;
+    return 0;
+}
